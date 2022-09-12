@@ -1,0 +1,21 @@
+<div id="container">
+    <dx-drop-down-box 
+        [(value)]="selectedFruit" 
+        [(opened)]="isDropDownBoxOpened" 
+        [dataSource]="dataSource" 
+        label="Fruits"
+        labelMode="floating"
+        [acceptCustomValue]="true"
+        [openOnFieldClick]="false"
+        (onEnterKey)="addItem()"
+    >
+        <dx-list 
+            [dataSource]="dataSource" 
+            selectionMode="single" 
+            (onSelectionChanged)="changeDropDownBoxValue($event)"
+            [allowItemDeleting]="true"
+            (onItemDeleting)="onItemDeleting($event)"
+        >
+        </dx-list>
+    </dx-drop-down-box>
+</div>
