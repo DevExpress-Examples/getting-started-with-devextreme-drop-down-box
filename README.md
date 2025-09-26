@@ -8,19 +8,19 @@
 
 This repository stores the code examples of the DropDownBox component for the [Getting Started with DropDownBox](https://js.devexpress.com/Documentation/Guide/UI_Components/DropDownBox/Getting_Started_with_DropDownBox/) tutorial. This tutorial explains how to create a DropDownBox, add an embedded element to it, configure selection, and handle events.
 
-<div align="center"><img src="./dropdownbox.png" /></div>
+<div align="center"><img src="images/dropdownbox.png" /></div>
 
 ## Files to Review
 
 - **Angular**
-    - [app.component.html](angular/src/app/app.component.html)
-    - [app.component.ts](angular/src/app/app.component.ts)
+    - [app.component.html](Angular/src/app/app.component.html)
+    - [app.component.ts](Angular/src/app/app.component.ts)
 - **jQuery**
-    - [index.js](jquery/src/index.js)
+    - [index.js](jQuery/src/index.js)
 - **React**
-    - [App.js](react/src/App.js)
+    - [App.js](React/src/App.js)
 - **Vue**
-    - [App.vue](vue/src/App.vue)
+    - [App.vue](Vue/src/App.vue)
 
 ## Documentation
 
