@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { ClickEvent } from 'devextreme/ui/button';
+import { Component, ViewChild } from '@angular/core';
+import { DxListComponent } from 'devextreme-angular';
+import { DxListTypes } from 'devextreme-angular/ui/list';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +8,30 @@ import { ClickEvent } from 'devextreme/ui/button';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Angular';
+  @ViewChild(DxListComponent, { static: false }) list!: DxListComponent;
 
-  counter = 0;
+  fruits: string[] = ['Apples', 'Oranges', 'Lemons', 'Pears', 'Pineapples'];
 
-  buttonText = 'Click count: 0';
+  dataSource: string[] = this.fruits;
 
-  onClick(e: ClickEvent): void {
-    this.counter++;
-    this.buttonText = `Click count: ${this.counter}`;
+  selectedFruit = '';
+
+  isDropDownBoxOpened = false;
+
+  changeDropDownBoxValue(args: DxListTypes.SelectionChangedEvent): void {
+    this.selectedFruit = args.addedItems[0];
+    this.isDropDownBoxOpened = false;
+  }
+
+  addItem(): void {
+    this.dataSource.push(this.selectedFruit);
+    this.selectedFruit = '';
+    this.list.instance.reload();
+  }
+
+  onItemDeleting(e: DxListTypes.ItemDeletingEvent): void {
+    if (this.dataSource.length === 1) {
+      e.cancel = true;
+    }
   }
 }

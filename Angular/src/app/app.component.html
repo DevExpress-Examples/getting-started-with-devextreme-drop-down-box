@@ -1,3 +1,21 @@
-<div class="default-style">
-  <dx-button [text]="buttonText" (onClick)="onClick($event)"></dx-button>
+<div id="app-container">
+  <dx-drop-down-box
+    [(value)]="selectedFruit"
+    [(opened)]="isDropDownBoxOpened"
+    [dataSource]="dataSource"
+    label="Fruits"
+    labelMode="floating"
+    [acceptCustomValue]="true"
+    [openOnFieldClick]="false"
+    (onEnterKey)="addItem()"
+  >
+    <dx-list
+      [dataSource]="dataSource"
+      selectionMode="single"
+      (onSelectionChanged)="changeDropDownBoxValue($event)"
+      [allowItemDeleting]="true"
+      (onItemDeleting)="onItemDeleting($event)"
+    >
+    </dx-list>
+  </dx-drop-down-box>
 </div>
