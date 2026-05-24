@@ -3,10 +3,11 @@ import { DxListComponent } from 'devextreme-angular';
 import { DxListTypes } from 'devextreme-angular/ui/list';
 
 import { DxDropDownBoxModule } from 'devextreme-angular/ui/drop-down-box';
+import { DxListModule } from 'devextreme-angular/ui/list';
 
 @Component({
     selector: 'app-root',
-    imports: [DxDropDownBoxModule],
+    imports: [DxDropDownBoxModule, DxListModule],
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
 })
