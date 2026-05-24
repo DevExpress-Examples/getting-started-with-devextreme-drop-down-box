@@ -2,11 +2,13 @@ import { Component, ViewChild } from '@angular/core';
 import { DxListComponent } from 'devextreme-angular';
 import { DxListTypes } from 'devextreme-angular/ui/list';
 
+import { DxDropDownBoxModule } from 'devextreme-angular/ui/drop-down-box';
+
 @Component({
     selector: 'app-root',
+    imports: [DxDropDownBoxModule],
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    standalone: false
 })
 export class AppComponent {
   @ViewChild(DxListComponent, { static: false }) list!: DxListComponent;
