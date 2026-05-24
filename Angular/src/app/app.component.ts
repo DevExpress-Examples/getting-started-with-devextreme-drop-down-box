@@ -3,9 +3,10 @@ import { DxListComponent } from 'devextreme-angular';
 import { DxListTypes } from 'devextreme-angular/ui/list';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    standalone: false
 })
 export class AppComponent {
   @ViewChild(DxListComponent, { static: false }) list!: DxListComponent;
