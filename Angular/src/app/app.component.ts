@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { DxListComponent } from 'devextreme-angular';
 import { DxListTypes } from 'devextreme-angular/ui/list';
 
@@ -9,6 +9,7 @@ import { DxListModule } from 'devextreme-angular/ui/list';
     selector: 'app-root',
     imports: [DxDropDownBoxModule, DxListModule],
     templateUrl: './app.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
